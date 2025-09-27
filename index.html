@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offre Exclusive 12 Mois : Netflix + Prime Video + TV Mondiale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* [ VOTRE CSS COMPLET VA ICI ] */
+        
+        /* Assurez-vous d'avoir le CSS pour .countdown, .device-item, etc. */
+
+        /* --- Styles de Base et Typographie (Inchangé) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d1e;
+            color: #f0f0f0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3, h4 {
+            text-align: center;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #ffeb3b;
+            margin-bottom: 30px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* --- SECTION HÉROÏQUE (ATTENTION) --- */
+        .hero-section {
+            background: linear-gradient(135deg, #1f083d 0%, #6a11cb 100%);
+            padding: 40px 0 60px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .pre-headline {
+            color: #00ff88;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .hero-image {
+            max-width: 80%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .price-badge {
+            background-color: #c9003c;
+            color: #ffffff;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 500;
+            margin: 20px auto;
+            box-shadow: 0 5px 20px rgba(201, 0, 60, 0.5);
+            text-transform: uppercase;
+        }
+
+        .price-value {
+            font-size: 2.5em;
+            font-weight: 900;
+            display: block;
+            line-height: 1.2;
+            margin-top: 5px;
+        }
+
+        /* --- BOUTON DE PAIEMENT (CTA PRINCIPAL) --- */
+        .payment-button {
+            display: block;
+            width: 90%;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px 15px;
+            background-color: #00ff88;
+            color: #1a1a1a;
+            font-size: 1.6em;
+            font-weight: 900;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0, 255, 136, 0.6);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+        }
+
+        .payment-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.8);
+        }
+
+        .pulse-effect {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-subtitle {
+            color: #cccccc;
+            font-size: 0.9em;
+            margin-top: -15px;
+        }
+
+        /* --- SECTION DE VALEUR (INTÉRÊT) --- */
+        .value-section {
+            background-color: #15152c;
+        }
+        
+        .value-table {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .value-item {
+            background-color: #1f1f41;
+            padding: 25px;
+            border-radius: 10px;
+            flex: 1 1 250px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid transparent;
+        }
+
+        .value-item p {
+            margin: 0;
+            color: #aaaaaa;
+            font-size: 1em;
+        }
+
+        .value-sum {
+            display: block;
+            font-size: 1.8em;
+            font-weight: 800;
+            margin-top: 10px;
+            color: #00ff88;
+        }
+
+        .saving {
+            background-color: #2a0058;
+            border-left-color: #ffeb3b;
+        }
+        .saving-sum {
+            color: #ffffff;
+            background-color: #c9003c;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        /* --- SECTION BÉNÉFICES ET SÉCURITÉ (Inchangé) --- */
+        .benefits-section {
+            background-color: #0d0d1e;
+        }
+
+        .benefit-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .benefit-card {
+            background-color: #1f1f41;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 280px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 4px solid #6a11cb;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(106, 17, 203, 0.3);
+        }
+
+        .icon-large {
+            font-size: 2.5em;
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.3em;
+            margin-top: 0;
+            color: #ffeb3b;
+        }
+
+        /* --- SECTION COMPATIBILITÉ (Styles de la Grille et Uniformisation) --- */
+        .compatibility-section {
+            background-color: #15152c;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Conteneur principal pour la grande image (pour la centrer) */
+        .pack-content-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px; /* Espace après la grande image */
+            margin-top: 40px;
+        }
+        
+        .pack-content-container img {
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 300px;
+        }
+        
+        /* Grille des appareils */
+        .device-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; 
+            margin-top: 30px;
+        }
+
+        /* Styles pour les 4 images d'appareils : UNIFORMISATION */
+        .device-grid .device-item {
+            flex: 0 0 220px;
+            max-width: 220px;
+            height: 300px; 
+            text-align: center;
+            background-color: #1f1f41;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+        }
+
+        .device-grid .device-item img {
+            width: 100%;
+            height: 90%; 
+            display: block;
+            object-fit: cover; /* L'image remplit la zone uniformément */
+            border-radius: 5px;
+        }
+
+        .device-grid h4 {
+            margin-top: 10px;
+            font-size: 1.1em;
+            flex-shrink: 0; 
+        }
+
+        /* --- SECTION URGENCE et COMPTE À REBOURS (Ajout des styles) --- */
+        .final-cta-section {
+            background-color: #2a0058;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 5px solid #ffeb3b;
+        }
+
+        .timer-box {
+            background-color: #1f083d;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 450px;
+            margin: 20px auto 40px;
+            border: 3px solid #c9003c;
+        }
+
+        .timer-label {
+            font-size: 1.2em;
+            color: #ffeb3b;
+            font-weight: 600;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .countdown span {
+            font-size: 3em;
+            font-weight: 900;
+            color: #c9003c;
+            background-color: #0d0d1e;
+            padding: 10px 15px;
+            border-radius: 8px;
+            line-height: 1.1;
+        }
+        
+        .timer-warning {
+            color: #ffeb3b;
+            font-weight: 600;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        
+        .payment-logos {
+            margin-top: 30px;
+        }
+
+        .payment-logos img {
+            max-width: 350px;
+            height: auto;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        /* --- FOOTER (Inchangé) --- */
+        footer {
+            background-color: #090915;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8em;
+            color: #555555;
+        }
+
+        /* --- MEDIA QUERIES (Réactivité) --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.2em; }
+            .price-value { font-size: 2em; }
+            .payment-button { font-size: 1.3em; padding: 20px 10px; }
+            .countdown span {
+                font-size: 2.2em;
+                padding: 8px 12px;
+            }
+            .device-grid .device-item {
+                flex: 1 1 45%;
+                max-width: none;
+                height: 250px;
+            }
+        }
+
+        .device-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(106, 17, 203, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container">
+            <img src="image_tv_premium.png" alt="Contenu en streaming Netflix, Prime Video et chaînes TV mondiales" class="hero-image">
+            
+            <p class="pre-headline">OFFRE FLASH EXCLUSIVE : 12 MOIS DE PAIX !</p>
+            <h1>STOP Payer Trop Cher pour le Divertissement !</h1>
+            <h2>Voici la seule offre qui vous donne <strong>12 MOIS</strong> de <strong>NETFLIX</strong> + <strong>PRIME VIDEO</strong> + Chaînes TV/Radio MONDIALES pour un prix <strong>JAMAIS VU</strong>!</h2>
+            
+            <div class="price-badge">
+                ACCÈS COMPLET 12 MOIS POUR SEULEMENT
+                <span class="price-value">4.500 FCFA</span>
+            </div>
+
+            <a href="https://www.pay.moneyfusion.net/pack-ultime-netflix-prime-video_1758968253087/" class="payment-button pulse-effect">
+                ⚡️ OBTENIR MON ACCÈS IMMÉDIAT À 4.500 FCFA !
+            </a>
+            <p class="cta-subtitle">Accès garanti sur Android, iPhone, PC, Smart TV...</p>
+        </div>
+    </header>
+    
+    <section class="value-section">
+        <div class="container">
+            <h3>Le Calcul est Simple : Économisez Plus de 90.000 FCFA !</h3>
+            
+            <div class="value-table">
+                <div class="value-item">
+                    <p>Abonnement Netflix (12 Mois)</p>
+                    <span class="value-sum">48.000 FCFA</span>
+                </div>
+                <div class="value-item">
+                    <p>Abonnement Prime Video (12 Mois)</p>
+                    <span class="value-sum">24.000 FCFA</span>
+                </div>
+                <div class="value-item">
+                    <p>Accès Chaînes TV/Radio Mondiale</p>
+                    <span class="value-sum">25.000 FCFA</span>
+                </div>
+                <div class="value-item saving">
+                    <p>VALEUR TOTALE ESTIMÉE</p>
+                    <span class="value-sum saving-sum">97.000 FCFA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="compatibility-section">
+        <div class="container">
+            <h3>Ce Que Vous Allez Recevoir (Et bien d'autres bonus)</h3>
+            
+            <div class="pack-content-container">
+                <img src="pack_content.png" alt="Capture d'écran de l'interface du pack (Netflix, Prime et Chaînes)">
+            </div>
+            
+            <h3>Profitez de votre pack sur tous vos écrans !</h3>
+
+            <div class="device-grid">
+                
+                <div class="device-item">
+                    <img src="pc_display.jpeg" alt="Contenu affiché sur un ordinateur portable">
+                    <h4><i class="fas fa-laptop"></i> Sur PC (Windows/Mac)</h4>
+                </div>
+                
+                <div class="device-item">
+                    <img src="mobile_display.jpeg" alt="Contenu affiché sur un smartphone">
+                    <h4><i class="fas fa-mobile-alt"></i> Sur Mobile (iOS/Android)</h4>
+                </div>
+                
+                <div class="device-item">
+                    <img src="tablet_display.jpeg" alt="Contenu affiché sur une tablette">
+                    <h4><i class="fas fa-tablet-alt"></i> Sur Tablette</h4>
+                </div>
+                
+                <div class="device-item">
+                    <img src="tv_display.jpeg" alt="Contenu affiché sur une Smart TV">
+                    <h4><i class="fas fa-tv"></i> Sur Smart TV/Box</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="benefits-section">
+        <div class="container">
+            <h3>Pourquoi Choisir Notre Accès ? (Zéro Contrainte)</h3>
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-key icon-large"></i>
+                    <h4>Accès Unique & Simple</h4>
+                    <p>Un seul code. Un seul compte. Zéro complication dans la gestion de vos abonnements.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt icon-large"></i>
+                    <h4>Paiements 100% Sécurisés</h4>
+                    <p>Transactions cryptées et garantie de livraison. Votre achat est protégé de A à Z.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-tachometer-alt icon-large"></i>
+                    <h4>Installation Express</h4>
+                    <p>Moins de 5 minutes chrono pour recevoir et installer votre accès sur n'importe quel appareil.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-globe icon-large"></i>
+                    <h4>Le Monde à Portée de Clic</h4>
+                    <p>En plus des plateformes, accédez à des milliers de chaînes TV/Radio de tous les continents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="final-cta-section">
+        <div class="container">
+            
+            <div class="timer-box">
+                <p class="timer-label">⚠️ ATTENTION : Cette Offre à 4.500 FCFA est Limitée !</p>
+                <div class="countdown"></div>
+                <p class="timer-warning">Le prix passera bientôt à 9.500 FCFA ! Saisissez-la avant qu'il n'expire.</p>
+            </div>
+            
+            <h3>12 MOIS de Divertissement Complet pour 4.500 FCFA</h3>
+
+            <a href="https://www.pay.moneyfusion.net/pack-ultime-netflix-prime-video_1758968253087/" class="payment-button final-pulse">
+                OUI, JE VEUX MES 12 MOIS NETFLIX + PRIME VIDEO ! 🚀
+            </a>
+            
+            <p style="color: #ffeb3b; font-weight: 600; margin-top: 10px;">
+                <i class="fas fa-handshake"></i> Garantie Accès ou Remboursement Intégral.
+            </p>
+
+            <div class="payment-logos">
+                <img src="logos_paiement.png" alt="Méthodes de paiement sécurisées: Wave, MTN, Moov, Airtel Money, PayPal">
+                <p>Paiement 100% sécurisé et adapté à votre région.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Service fourni par OhNo | Support technique disponible 7j/7.</p>
+    </footer>
+    
+    <script>
+        // ... (votre script JavaScript) ...
+    </script>
+    
+</body>
+</html>
